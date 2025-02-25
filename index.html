@@ -3,20 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Hamza Khader - Portfolio</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        ul { list-style: none; padding: 0; }
-        li { margin: 10px 0; }
-        a { text-decoration: none; color: blue; font-size: 18px; }
+        /* General Body Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #2C3E50;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* Project Section Styles */
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 50px 20px;
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: #fff;
+            width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-card .content {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .project-card .content h3 {
+            font-size: 1.6em;
+            color: #333;
+        }
+
+        .project-card .content p {
+            color: #555;
+            font-size: 1em;
+        }
+
+        .project-card .content a {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #2C3E50;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-card .content a:hover {
+            background-color: #2980B9;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #2C3E50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .projects {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .project-card {
+                width: 80%;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Welcome to My Portfolio</h1>
-    <p>Here are my projects:</p>
-    <ul>
-        <li><a href="https://github.com/EngHamzaKhader/DIABETES-PREDICTION-PROJECT---TECHNOHACKS-SOLUTIONS---MACHINE-LEARNING-ENGINEERING">Diabetes Prediction Project</a></li>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Hamza Khader</h1>
+        <p>Data Scientist | Machine Learning Enthusiast | Problem Solver</p>
+    </header>
+
+    <!-- Projects Section -->
+    <section class="projects">
+        <!-- Example Project -->
+        <div class="project-card">
+            <img src="https://via.placeholder.com/300x200" alt="Project Image">
+            <div class="content">
+                <h3>Diabetes Prediction Project</h3>
+                <p>This project uses machine learning techniques to predict diabetes based on health data.</p>
+                <a href="https://github.com/EngHamzaKhader/DIABETES-PREDICTION-PROJECT---TECHNOHACKS-SOLUTIONS---MACHINE-LEARNING-ENGINEERING" target="_blank">View on GitHub</a>
+            </div>
+        </div>
         <!-- Add more projects here -->
-    </ul>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Hamza Khader | All Rights Reserved</p>
+    </footer>
+
 </body>
 </html>
