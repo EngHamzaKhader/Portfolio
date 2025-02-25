@@ -1,206 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- تحديد الترميز وحجم العرض للتأكد من أن الصفحة ستعرض بشكل صحيح على جميع الأجهزة -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hamza Khader - Portfolio</title>
     <style>
-        /* تنسيق النصوص والمحتويات العامة للصفحة */
+        /* تنسيقات الجسم العامة للصفحة */
         body {
-            font-family: 'Arial', sans-serif; /* تحديد الخط المستخدم */
-            margin: 0; /* إزالة الهوامش حول الصفحة */
-            padding: 0; /* إزالة التوسيع داخل الصفحة */
-            background-color: #212121; /* تحديد لون خلفية الصفحة */
-            color: white; /* تحديد لون النص داخل الصفحة */
-            line-height: 1.6; /* تعديل المسافة بين الأسطر لجعل النص أكثر وضوحاً */
+            font-family: 'Arial', sans-serif; 
+            margin: 0;
+            padding: 0;
+            background-color: #212121;
+            color: white;
+            line-height: 1.6;
         }
 
-        /* تنسيق الهيدر الذي يحتوي على الاسم والصورة */
+        /* تنسيقات الهيدر الذي يحتوي على الاسم والصورة */
         header {
-            background-color: #00ffb3; /* تعيين لون الخلفية للهيدر */
-            color: black; /* تعيين لون النص داخل الهيدر */
-            padding: 40px 0; /* تحديد المسافة داخل الهيدر من الأعلى والأسفل */
-            text-align: center; /* محاذاة النصوص إلى الوسط */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* إضافة ظل خفيف حول الهيدر */
+            background-color: #00ffb3;
+            color: black;
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
-        /* تنسيق محتويات الهيدر مثل الاسم والصورة */
-        header div {
-            display: flex; /* استخدام الفليكس لتوزيع العناصر داخل الهيدر */
-            justify-content: space-between; /* توزيع المحتوى بين الجانبين */
-            align-items: center; /* محاذاة العناصر بشكل عمودي */
-        }
-
-        /* تنسيق الاسم وتحويله إلى حروف كبيرة مع تغيير الحجم */
         header h1 {
-            font-size: 4em; /* زيادة حجم الخط للاسم */
-            text-transform: uppercase; /* تحويل النص إلى حروف كبيرة */
-            margin: 0; /* إزالة الهوامش حول الاسم */
+            font-size: 3.5em;
+            margin: 0;
+            text-transform: uppercase;
         }
 
-        /* تنسيق النص الذي يصف الوظائف مع زيادة الحجم */
         header p {
-            font-size: 1.5em; /* زيادة حجم النص */
-            margin-top: 10px; /* إضافة مسافة بين السطور */
-            font-weight: 300; /* جعل النص خفيف */
+            font-size: 1.6em;
+            margin-top: 10px;
+            font-weight: 300;
+            text-align: center; /* توسيط النص */
         }
 
-        /* تنسيق الصورة الشخصية */
+        header .data-scientist {
+            font-weight: bold; /* جعل Data Scientist بخط عريض */
+        }
+
         .profile-img {
-            width: 220px; /* تعيين عرض الصورة */
-            height: 220px; /* تعيين ارتفاع الصورة */
-            border-radius: 50%; /* تحويل الصورة إلى دائرة */
-            border: 5px solid #00ffb3; /* إضافة حدود خضراء حول الصورة */
-            object-fit: cover; /* ضبط الصورة لتغطي المساحة المخصصة لها */
-            object-position:center; /* التأكد من تمركز الصورة بشكل صحيح داخل الدائرة */
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            margin-top: 20px;
+            border: 5px solid #00ffb3;
+            object-fit: cover;
+            object-position:center;
         }
 
-        /* تنسيق الروابط مثل البريد الإلكتروني ورابط لينكدإن */
-        .contact-links {
-            margin-top: 20px; /* إضافة مسافة بين الروابط والمحتوى العلوي */
-            text-align: left; /* محاذاة النصوص إلى اليسار */
-            font-size: 1.2em; /* زيادة حجم الخط للروابط */
+        /* إضافة قسم ملخص عني */
+        .summary {
+            background-color: #333;
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+            border-radius: 8px;
         }
 
-        /* تنسيق الروابط داخل "Contact Links" */
-        .contact-links a {
-            color: #00ffb3; /* تعيين لون الرابط */
-            text-decoration: none; /* إزالة التسطير من الروابط */
-            margin-right: 20px; /* إضافة مسافة بين الروابط */
+        .summary h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
         }
 
-        /* تنسيق حالة التمرير على الروابط */
-        .contact-links a:hover {
-            color: #e6004c; /* تغيير اللون عند التمرير على الرابط */
+        .summary p {
+            color: #bbb;
+            font-size: 1.2em;
         }
 
-        /* تنسيق صورة QR code */
-        .qr-code {
-            display: block; /* عرض الصورة ككتلة */
-            margin-top: 20px; /* إضافة مسافة بين صورة QR وبقية المحتوى */
-            width: 150px; /* تحديد عرض صورة QR */
-            height: 150px; /* تحديد ارتفاع صورة QR */
-            border: 5px solid #00ffb3; /* إضافة حدود حول الـ QR باللون الأخضر */
-            object-fit: cover; /* جعل الصورة تغطي المساحة المخصصة لها */
+        .contact-info {
+            text-align: center;
+            margin-top: 20px;
         }
 
-        /* تنسيق الفوتر في أسفل الصفحة */
-        footer {
-            background-color: #333; /* تعيين لون الخلفية للفوتر */
-            color: white; /* تعيين لون النص داخل الفوتر */
-            padding: 20px; /* إضافة مسافة داخل الفوتر */
-            text-align: center; /* محاذاة النص داخل الفوتر إلى المنتصف */
-            position: fixed; /* جعل الفوتر ثابتاً أسفل الصفحة */
-            width: 100%; /* جعل عرض الفوتر يشغل كامل عرض الصفحة */
-            bottom: 0; /* محاذاة الفوتر للأسفل */
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin: 0 15px;
+            transition: color 0.3s;
         }
 
-        /* تنسيق قسم المشاريع بحيث يتم عرضها بشكل شبكي */
+        .contact-info a:hover {
+            color: #00ffb3;
+        }
+
         .projects {
-            display: flex; /* استخدام الفليكس لعرض العناصر بشكل صفوف */
-            flex-wrap: wrap; /* السماح بتوزيع العناصر في صفوف متعددة */
-            justify-content: center; /* محاذاة العناصر إلى الوسط */
-            padding: 50px 20px; /* إضافة مسافة حول المشاريع */
-            gap: 40px; /* إضافة مسافة بين العناصر */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 50px 20px;
+            gap: 40px;
         }
 
-        /* تنسيق البطاقة الخاصة بكل مشروع */
         .project-card {
-            background-color: #333; /* تحديد خلفية البطاقة باللون الرمادي */
-            width: 250px; /* تحديد عرض البطاقة */
-            border-radius: 8px; /* إضافة زوايا دائرية للبطاقة */
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* إضافة ظل خفيف حول البطاقة */
-            overflow: hidden; /* منع العناصر من الخروج خارج حدود البطاقة */
-            transition: transform 0.3s ease-in-out; /* إضافة تأثير الحركة عند التمرير على البطاقة */
-            border: 2px solid #00ffb3; /* إضافة حدود خضراء حول البطاقة */
+            background-color: #333;
+            width: 280px;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+            border: 2px solid #00ffb3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        /* تأثير التمرير على البطاقة بحيث تتحرك قليلاً عند المرور */
         .project-card:hover {
-            transform: translateY(-8px); /* رفع البطاقة للأعلى قليلاً عند التمرير */
+            transform: translateY(-8px);
         }
 
-        /* تنسيق محتوى البطاقة مثل العنوان والنص */
         .project-card .content {
-            padding: 20px; /* إضافة مسافة داخل محتوى البطاقة */
-            text-align: left; /* محاذاة النص إلى اليسار داخل البطاقة */
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1;
         }
 
         .project-card .content h3 {
-            font-size: 1.5em; /* تحديد حجم خط العنوان داخل البطاقة */
-            color: #fff; /* تحديد لون النص ليكون أبيض */
-            margin-bottom: 15px; /* إضافة مسافة أسفل العنوان */
+            font-size: 1.5em;
+            color: #fff;
+            margin-bottom: 15px;
         }
 
         .project-card .content p {
-            color: #bbb; /* تحديد لون النص ليكون رمادي فاتح */
-            font-size: 1em; /* تحديد حجم الخط للنص داخل البطاقة */
-            margin-bottom: 20px; /* إضافة مسافة أسفل النص */
+            color: #bbb;
+            font-size: 1em;
+            margin-bottom: 20px;
         }
 
-        /* تنسيق زر "عرض على GitHub" داخل البطاقة */
         .project-card .content a {
-            display: inline-block; /* جعل الرابط ككتلة */
-            background-color: #00ffb3; /* تعيين خلفية الزر باللون الأخضر */
-            color: black; /* تعيين لون النص داخل الزر إلى الأسود */
-            text-decoration: none; /* إزالة التسطير من الرابط */
-            padding: 12px 25px; /* تحديد حجم الزر */
-            border-radius: 5px; /* جعل الزر ذو زوايا دائرية */
-            text-transform: uppercase; /* تحويل النص داخل الزر إلى حروف كبيرة */
-            font-weight: 600; /* جعل النص داخل الزر عريض */
-            transition: background-color 0.3s ease, transform 0.2s ease; /* إضافة تأثير عند التمرير على الزر */
+            display: block;
+            background-color: #00ffb3;
+            color: black;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: auto;
+            text-align: center;
         }
 
-        /* تأثير التمرير على الزر لتغيير لونه وحجمه */
         .project-card .content a:hover {
-            background-color: #e6004c; /* تغيير لون الزر عند التمرير */
-            transform: scale(1.1); /* تكبير الزر قليلاً عند التمرير */
+            background-color: #e6004c;
+            transform: scale(1.1);
         }
 
-        /* تنسيق الشاشات الصغيرة مثل الهواتف المحمولة */
+        /* قسم GitHub */
+        .view-on-github {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .view-on-github a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+            background-color: #00ffb3;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+
+        .view-on-github a:hover {
+            background-color: #e6004c;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
         @media (max-width: 768px) {
             .projects {
-                flex-direction: column; /* جعل العناصر تُعرض عموديًا */
-                align-items: center; /* محاذاة العناصر إلى المركز */
+                flex-direction: column;
+                align-items: center;
             }
 
             .project-card {
-                width: 90%; /* جعل عرض البطاقة أقل على الشاشات الصغيرة */
-                margin-bottom: 20px; /* إضافة مسافة بين البطاقات */
+                width: 90%;
+                margin-bottom: 20px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- هيدر يحتوي على الاسم والصورة -->
+    <!-- قسم الهيدر -->
     <header>
-        <div>
-            <div>
-                <!-- عرض الاسم مع تحويله لحروف كبيرة -->
-                <h1>HAMZA KHADER</h1>
-                <!-- عرض النص الذي يصف الوظائف مع زيادة الحجم -->
-                <p>Data Scientist | Data Analyst | AI Engineer | Machine Learning Enthusiast | Problem Solver</p>
-            </div>
-            <!-- هنا يتم وضع الصورة الشخصية، يمكن تعديل الرابط لتغيير الصورة -->
-            <img class="profile-img" src="https://github.com/EngHamzaKhader/Portfolio/blob/main/My%20Picture.png?raw=true" alt="Hamza Khader">
-        </div>
+        <h1>HAMZA KHADER</h1>
+        <p class="data-scientist">Data Scientist</p>
+        <p>Passionate and ready to work in these fields</p>
+        <p>Data Analyst | Machine Learning | Deep Learning | AI Engineer | Data Engineer | Big Data | SQL Developer | Python Developer | Business Intelligence | Cloud Service and Computing Engineer</p>
+        <img class="profile-img" src="https://github.com/EngHamzaKhader/Portfolio/blob/main/My%20Picture.png?raw=true" alt="Hamza Khader">
     </header>
 
-    <!-- روابط الاتصال مثل لينكدإن، البريد الإلكتروني، الهاتف -->
-    <div class="contact-links">
-        <p><strong>Contact Me:</strong></p>
-        <p>
-            <!-- الروابط يمكن تعديلها كما ترغب -->
-            <a href="https://www.linkedin.com/in/hamzakhader/" target="_blank">LinkedIn</a> |
-            <a href="mailto:eng.hamzakhader@gmail.com">Email</a> |
-            <a href="tel:+962770056529">Phone/WhatsApp: +962770056529</a> |
-            <a href="https://www.linkedin.com/in/hamzakhader/overlay/1740308396350/single-media-viewer/?type=DOCUMENT&profileId=ACoAAE7Uk34BZJLleYeZeAoallAyt1_J7R2Uo2o" target="_blank">CV</a> |
-            <a href="https://www.linkedin.com/in/hamzakhader/overlay/1740308285651/single-media-viewer/?type=DOCUMENT&profileId=ACoAAE7Uk34BZJLleYeZeAoallAyt1_J7R2Uo2o" target="_blank">Cover Letter</a>
-        </p>
+    <!-- قسم ملخص عني -->
+    <section class="summary">
+        <h2>About Me</h2>
+        <p>I'm passionate about transforming data into actionable insights. My expertise spans across machine learning, AI, and deep learning, with a focus on solving real-world problems. I'm constantly learning and expanding my skills to stay ahead in the rapidly evolving tech landscape.</p>
+    </section>
+
+    <!-- قسم المشاريع -->
+    <section class="projects">
+        <div class="project-card">
+            <div class="content">
+                <h3>Data Integration and ETL for SQL Database</h3>
+                <p>This project focuses on data integration and ETL processes, transforming data from multiple sources and uploading it to a SQL database for analysis.</p>
+                <a href="https://github.com/EngHamzaKhader/ETL-SQL-Integration" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <div class="content">
+                <h3>Lung Cancer Classification using CNN</h3>
+                <p>Developed a CNN-based model to classify lung cancer images using a deep learning approach with VGG16 architecture.</p>
+                <a href="https://github.com/EngHamzaKhader/Lung-Cancer-Classification-CNN" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- قسم معلومات الاتصال -->
+    <div class="contact-info">
+        <a href="https://www.linkedin.com/in/hamzakhader/"><span>🔗</span>LinkedIn</a>
+        <span>&nbsp;|&nbsp;</span>
+        <a href="mailto:eng.hamzakhader@gmail.com"><span>📧</span>Email</a>
+        <span>&nbsp;|&nbsp;</span>
+        <a href="tel:+962770056529"><span>📱</span>Phone/WhatsApp: +962770056529 / +447861191444</a>
+        <span>&nbsp;|&nbsp;</span>
+        <a href="https://www.linkedin.com/in/hamzakhader/overlay/1740308396350/single-media-viewer/?type=DOCUMENT&profileId=ACoAAE7Uk34BZJLleYeZeAoallAyt1_J7R2Uo2o"><span>📄</span>Resume</a>
+        <span>&nbsp;|&nbsp;</span>
+        <a href="https://www.linkedin.com/in/hamzakhader/overlay/1740308285651/single-media-viewer/?type=DOCUMENT&profileId=ACoAAE7Uk34BZJLleYeZeAoallAyt1_J7R2Uo2o"><span>📝</span>Cover Letter</a>
+        <span>&nbsp;|&nbsp;</span>
+        <a href="https://github.com/EngHamzaKhader"><span>🧑‍💻</span>GitHub</a>
+    </div>
+    <!-- قسم GitHub -->
+    <div class="view-on-github">
+        <p>View my projects on GitHub</p>
+        <a href="https://github.com/EngHamzaKhader" target="_blank">
+            <i class="fa fa-github"></i> View on GitHub
+        </a>
     </div>
 
-    <!-- هنا يتم إضافة رمز QR الذي يؤدي إلى محفظتك على الإنترنت -->
-    <div>
-        <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?data
+    <!-- قسم التذييل -->
+    <footer>
+        <p>&copy; 2025 Hamza Khader | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
