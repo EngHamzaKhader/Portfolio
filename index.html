@@ -1,174 +1,206 @@
-<!DOCTYPE html> <!-- تحديد نوع الوثيقة بأنها HTML -->
-<html lang="en"> <!-- تحديد لغة الصفحة على أنها إنجليزية -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8"> <!-- تحديد الترميز المستخدم للصفحة (UTF-8) -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- تعيين إعدادات العرض للموبايل لضمان التناسب مع الشاشة -->
-    <title>Hamza Khader - Portfolio</title> <!-- عنوان الصفحة الذي يظهر في المتصفح -->
+    <!-- تحديد الترميز وحجم العرض للتأكد من أن الصفحة ستعرض بشكل صحيح على جميع الأجهزة -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamza Khader - Portfolio</title>
     <style>
-        /* General Body Styles - هذا الجزء لتعديل تنسيقات النصوص والهيكل العام للصفحة */
+        /* تنسيق النصوص والمحتويات العامة للصفحة */
         body {
-            font-family: 'Arial', sans-serif; /* تحديد الخط الأساسي */
+            font-family: 'Arial', sans-serif; /* تحديد الخط المستخدم */
             margin: 0; /* إزالة الهوامش حول الصفحة */
-            padding: 0; /* إزالة الحشو حول الصفحة */
-            background-color: #212121;  /* تحديد لون الخلفية للصفحة (لون داكن) */
-            color: white; /* تحديد لون النص باللون الأبيض */
-            line-height: 1.6; /* تحديد المسافة بين الأسطر */
+            padding: 0; /* إزالة التوسيع داخل الصفحة */
+            background-color: #212121; /* تحديد لون خلفية الصفحة */
+            color: white; /* تحديد لون النص داخل الصفحة */
+            line-height: 1.6; /* تعديل المسافة بين الأسطر لجعل النص أكثر وضوحاً */
         }
 
-        /* Header Section - هذا الجزء لتعديل الهيدر الذي يحتوي على الاسم وصورة الملف الشخصي */
+        /* تنسيق الهيدر الذي يحتوي على الاسم والصورة */
         header {
-            background-color: #00ffb3;  /* تحديد لون خلفية الهيدر */
-            color: black; /* تحديد لون النص في الهيدر */
-            padding: 40px 0; /* تحديد الحشو العلوي والسفلي للهيدر */
-            text-align: center; /* محاذاة النص في الوسط */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);  /* إضافة تأثير الظل على الهيدر */
+            background-color: #00ffb3; /* تعيين لون الخلفية للهيدر */
+            color: black; /* تعيين لون النص داخل الهيدر */
+            padding: 40px 0; /* تحديد المسافة داخل الهيدر من الأعلى والأسفل */
+            text-align: center; /* محاذاة النصوص إلى الوسط */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* إضافة ظل خفيف حول الهيدر */
         }
 
-        /* تعديل الحاوية داخل الهيدر بحيث تكون الصورة في أقصى اليمين والنص في اليسار */
+        /* تنسيق محتويات الهيدر مثل الاسم والصورة */
         header div {
-            display: flex; /* استخدام flexbox لترتيب العناصر بشكل أفقي */
-            justify-content: space-between; /* توزيع المسافة بين العناصر */
-            align-items: center; /* محاذاة العناصر عموديًا في المنتصف */
+            display: flex; /* استخدام الفليكس لتوزيع العناصر داخل الهيدر */
+            justify-content: space-between; /* توزيع المحتوى بين الجانبين */
+            align-items: center; /* محاذاة العناصر بشكل عمودي */
         }
 
+        /* تنسيق الاسم وتحويله إلى حروف كبيرة مع تغيير الحجم */
         header h1 {
-            font-size: 3em;  /* تحديد حجم الخط للعنوان */
-            margin: 0; /* إزالة الهوامش حول العنوان */
+            font-size: 4em; /* زيادة حجم الخط للاسم */
+            text-transform: uppercase; /* تحويل النص إلى حروف كبيرة */
+            margin: 0; /* إزالة الهوامش حول الاسم */
         }
 
+        /* تنسيق النص الذي يصف الوظائف مع زيادة الحجم */
         header p {
-            font-size: 1.2em; /* تحديد حجم الخط للفقرة تحت العنوان */
-            margin-top: 10px; /* إضافة مسافة بين العنوان والفقرة */
-            font-weight: 300;  /* تحديد وزن الخط ليكون خفيف */
+            font-size: 1.5em; /* زيادة حجم النص */
+            margin-top: 10px; /* إضافة مسافة بين السطور */
+            font-weight: 300; /* جعل النص خفيف */
         }
 
-        /* Profile Image - هذا الجزء لتعديل الصورة الشخصية */
+        /* تنسيق الصورة الشخصية */
         .profile-img {
-            width: 250px; /* تحديد عرض الصورة */
-            height: 250px; /* تحديد ارتفاع الصورة */
-            border-radius: 50%; /* جعل الصورة بشكل دائري */
-            border: 5px solid #00ffb3;  /* إضافة حدود حول الصورة بنفس لون الهيدر */
-            object-fit: cover; /* التأكد من أن الصورة تغطي العنصر دون تشويه */
-            object-position:center; /* تحديد أن الجزء العلوي من الصورة هو الذي يظهر أولاً */
+            width: 220px; /* تعيين عرض الصورة */
+            height: 220px; /* تعيين ارتفاع الصورة */
+            border-radius: 50%; /* تحويل الصورة إلى دائرة */
+            border: 5px solid #00ffb3; /* إضافة حدود خضراء حول الصورة */
+            object-fit: cover; /* ضبط الصورة لتغطي المساحة المخصصة لها */
+            object-position:center; /* التأكد من تمركز الصورة بشكل صحيح داخل الدائرة */
         }
 
-        /* Projects Section - هذا الجزء لتعديل وتنسيق قسم المشاريع */
+        /* تنسيق الروابط مثل البريد الإلكتروني ورابط لينكدإن */
+        .contact-links {
+            margin-top: 20px; /* إضافة مسافة بين الروابط والمحتوى العلوي */
+            text-align: left; /* محاذاة النصوص إلى اليسار */
+            font-size: 1.2em; /* زيادة حجم الخط للروابط */
+        }
+
+        /* تنسيق الروابط داخل "Contact Links" */
+        .contact-links a {
+            color: #00ffb3; /* تعيين لون الرابط */
+            text-decoration: none; /* إزالة التسطير من الروابط */
+            margin-right: 20px; /* إضافة مسافة بين الروابط */
+        }
+
+        /* تنسيق حالة التمرير على الروابط */
+        .contact-links a:hover {
+            color: #e6004c; /* تغيير اللون عند التمرير على الرابط */
+        }
+
+        /* تنسيق صورة QR code */
+        .qr-code {
+            display: block; /* عرض الصورة ككتلة */
+            margin-top: 20px; /* إضافة مسافة بين صورة QR وبقية المحتوى */
+            width: 150px; /* تحديد عرض صورة QR */
+            height: 150px; /* تحديد ارتفاع صورة QR */
+            border: 5px solid #00ffb3; /* إضافة حدود حول الـ QR باللون الأخضر */
+            object-fit: cover; /* جعل الصورة تغطي المساحة المخصصة لها */
+        }
+
+        /* تنسيق الفوتر في أسفل الصفحة */
+        footer {
+            background-color: #333; /* تعيين لون الخلفية للفوتر */
+            color: white; /* تعيين لون النص داخل الفوتر */
+            padding: 20px; /* إضافة مسافة داخل الفوتر */
+            text-align: center; /* محاذاة النص داخل الفوتر إلى المنتصف */
+            position: fixed; /* جعل الفوتر ثابتاً أسفل الصفحة */
+            width: 100%; /* جعل عرض الفوتر يشغل كامل عرض الصفحة */
+            bottom: 0; /* محاذاة الفوتر للأسفل */
+        }
+
+        /* تنسيق قسم المشاريع بحيث يتم عرضها بشكل شبكي */
         .projects {
-            display: flex; /* استخدام العرض الأفقي للعنصر */
-            flex-wrap: wrap; /* السماح للعناصر بالانتقال إلى السطر التالي عند الحاجة */
-            justify-content: center; /* محاذاة العناصر إلى المنتصف */
-            padding: 50px 20px; /* إضافة حشو حول قسم المشاريع */
+            display: flex; /* استخدام الفليكس لعرض العناصر بشكل صفوف */
+            flex-wrap: wrap; /* السماح بتوزيع العناصر في صفوف متعددة */
+            justify-content: center; /* محاذاة العناصر إلى الوسط */
+            padding: 50px 20px; /* إضافة مسافة حول المشاريع */
             gap: 40px; /* إضافة مسافة بين العناصر */
         }
 
-        /* Individual Project Card - هذا الجزء لتعديل شكل وتصميم البطاقات الخاصة بالمشاريع */
+        /* تنسيق البطاقة الخاصة بكل مشروع */
         .project-card {
-            background-color: #333;  /* تحديد لون الخلفية للبطاقة */
-            width: 280px;  /* تحديد عرض البطاقة */
-            border-radius: 8px;  /* تحديد الحواف المستديرة للبطاقة */
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);  /* إضافة تأثير الظل حول البطاقة */
-            overflow: hidden;  /* إخفاء أي محتوى خارج حدود البطاقة */
-            transition: transform 0.3s ease-in-out;  /* إضافة تأثير عند تحريك الماوس على البطاقة */
-            border: 2px solid #00ffb3;  /* إضافة حدود حول البطاقة بنفس لون الهيدر */
+            background-color: #333; /* تحديد خلفية البطاقة باللون الرمادي */
+            width: 250px; /* تحديد عرض البطاقة */
+            border-radius: 8px; /* إضافة زوايا دائرية للبطاقة */
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* إضافة ظل خفيف حول البطاقة */
+            overflow: hidden; /* منع العناصر من الخروج خارج حدود البطاقة */
+            transition: transform 0.3s ease-in-out; /* إضافة تأثير الحركة عند التمرير على البطاقة */
+            border: 2px solid #00ffb3; /* إضافة حدود خضراء حول البطاقة */
         }
 
-        /* Hover effect for project card - هذا الجزء لتعديل تأثير التمرير على البطاقة */
+        /* تأثير التمرير على البطاقة بحيث تتحرك قليلاً عند المرور */
         .project-card:hover {
-            transform: translateY(-8px); /* إضافة حركة عندما يتم التمرير فوق البطاقة */
+            transform: translateY(-8px); /* رفع البطاقة للأعلى قليلاً عند التمرير */
         }
 
-        /* Content inside project card - هذا الجزء لتعديل المحتوى داخل البطاقة */
+        /* تنسيق محتوى البطاقة مثل العنوان والنص */
         .project-card .content {
-            padding: 20px;  /* إضافة حشو داخل البطاقة */
-            text-align: left;  /* محاذاة النص إلى اليسار داخل البطاقة */
+            padding: 20px; /* إضافة مسافة داخل محتوى البطاقة */
+            text-align: left; /* محاذاة النص إلى اليسار داخل البطاقة */
         }
 
         .project-card .content h3 {
-            font-size: 1.5em;  /* تحديد حجم الخط لعناوين المشاريع */
-            color: #fff;  /* تحديد لون النص داخل البطاقة ليكون أبيض */
-            margin-bottom: 15px;  /* إضافة مسافة أسفل العنوان */
+            font-size: 1.5em; /* تحديد حجم خط العنوان داخل البطاقة */
+            color: #fff; /* تحديد لون النص ليكون أبيض */
+            margin-bottom: 15px; /* إضافة مسافة أسفل العنوان */
         }
 
         .project-card .content p {
-            color: #bbb;  /* تحديد لون النص ليكون رمادي */
-            font-size: 1em;  /* تحديد حجم الخط للفقرات داخل البطاقة */
-            margin-bottom: 20px;  /* إضافة مسافة أسفل الفقرات */
+            color: #bbb; /* تحديد لون النص ليكون رمادي فاتح */
+            font-size: 1em; /* تحديد حجم الخط للنص داخل البطاقة */
+            margin-bottom: 20px; /* إضافة مسافة أسفل النص */
         }
 
-        /* Link Button Styling - هذا الجزء لتعديل شكل الرابط داخل البطاقة */
+        /* تنسيق زر "عرض على GitHub" داخل البطاقة */
         .project-card .content a {
-            display: inline-block;  /* جعل الرابط يظهر بشكل كتلة قابلة للنقر */
-            background-color: #00ffb3;  /* تحديد لون الخلفية للرابط */
-            color: black;  /* تحديد لون النص للرابط */
-            text-decoration: none;  /* إزالة أي خط تحت الرابط */
-            padding: 12px 25px;  /* إضافة حشو حول الرابط */
-            border-radius: 5px;  /* جعل حواف الرابط مستديرة */
-            text-transform: uppercase;  /* تحويل النص إلى حروف كبيرة */
-            font-weight: 600;  /* جعل النص ثقيل */
-            transition: background-color 0.3s ease, transform 0.2s ease; /* إضافة تأثيرات عند التمرير فوق الرابط */
+            display: inline-block; /* جعل الرابط ككتلة */
+            background-color: #00ffb3; /* تعيين خلفية الزر باللون الأخضر */
+            color: black; /* تعيين لون النص داخل الزر إلى الأسود */
+            text-decoration: none; /* إزالة التسطير من الرابط */
+            padding: 12px 25px; /* تحديد حجم الزر */
+            border-radius: 5px; /* جعل الزر ذو زوايا دائرية */
+            text-transform: uppercase; /* تحويل النص داخل الزر إلى حروف كبيرة */
+            font-weight: 600; /* جعل النص داخل الزر عريض */
+            transition: background-color 0.3s ease, transform 0.2s ease; /* إضافة تأثير عند التمرير على الزر */
         }
 
+        /* تأثير التمرير على الزر لتغيير لونه وحجمه */
         .project-card .content a:hover {
-            background-color: #e6004c;  /* تغيير لون الخلفية عند التمرير فوق الرابط */
-            transform: scale(1.1);  /* زيادة حجم الرابط عند التمرير فوقه */
+            background-color: #e6004c; /* تغيير لون الزر عند التمرير */
+            transform: scale(1.1); /* تكبير الزر قليلاً عند التمرير */
         }
 
-        /* Footer Section - هذا الجزء لتعديل تنسيق الفوتر */
-        footer {
-            background-color: #333;  /* تحديد لون الخلفية للفوتر */
-            color: white;  /* تحديد لون النص في الفوتر */
-            padding: 20px;  /* إضافة حشو داخل الفوتر */
-            text-align: center;  /* محاذاة النص في الفوتر إلى المنتصف */
-            position: fixed;  /* تثبيت الفوتر في أسفل الصفحة */
-            width: 100%;  /* جعل الفوتر يعرض العرض الكامل */
-            bottom: 0;  /* وضع الفوتر في الأسفل */
-        }
-
-        /* Responsive Design - هذا الجزء لتعديل التوافق مع الأجهزة الصغيرة مثل الموبايل */
+        /* تنسيق الشاشات الصغيرة مثل الهواتف المحمولة */
         @media (max-width: 768px) {
             .projects {
-                flex-direction: column;  /* تغيير اتجاه العناصر إلى عمودي على الأجهزة الصغيرة */
-                align-items: center;  /* محاذاة العناصر في المنتصف */
+                flex-direction: column; /* جعل العناصر تُعرض عموديًا */
+                align-items: center; /* محاذاة العناصر إلى المركز */
             }
 
             .project-card {
-                width: 90%;  /* جعل البطاقة تأخذ 90% من العرض */
-                margin-bottom: 20px;  /* إضافة مسافة بين البطاقة والأخرى */
+                width: 90%; /* جعل عرض البطاقة أقل على الشاشات الصغيرة */
+                margin-bottom: 20px; /* إضافة مسافة بين البطاقات */
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Section -->
+    <!-- هيدر يحتوي على الاسم والصورة -->
     <header>
         <div>
             <div>
-                <h1>Hamza Khader</h1> <!-- اسم المستخدم في الهيدر -->
-                <p>Data Scientist | Data Analyst | AI Engineer | Machine Learning Enthusiast | Problem Solver</p> <!-- وصف المستخدم -->
+                <!-- عرض الاسم مع تحويله لحروف كبيرة -->
+                <h1>HAMZA KHADER</h1>
+                <!-- عرض النص الذي يصف الوظائف مع زيادة الحجم -->
+                <p>Data Scientist | Data Analyst | AI Engineer | Machine Learning Enthusiast | Problem Solver</p>
             </div>
-            <!-- Profile Image -->
-            <img class="profile-img" src="https://github.com/EngHamzaKhader/Portfolio/blob/main/My%20Picture.png?raw=true" alt="Hamza Khader"> <!-- صورة المستخدم -->
+            <!-- هنا يتم وضع الصورة الشخصية، يمكن تعديل الرابط لتغيير الصورة -->
+            <img class="profile-img" src="https://github.com/EngHamzaKhader/Portfolio/blob/main/My%20Picture.png?raw=true" alt="Hamza Khader">
         </div>
     </header>
 
-    <!-- Projects Section -->
-    <section class="projects">
-        <!-- Example Project 1 -->
-        <div class="project-card">
-            <div class="content">
-                <h3>Diabetes Prediction Project</h3> <!-- عنوان المشروع -->
-                <p>This project uses machine learning techniques to predict diabetes based on health data. It involves data cleaning, feature engineering, and model evaluation.</p> <!-- وصف المشروع -->
-                <a href="https://github.com/EngHamzaKhader/DIABETES-PREDICTION-PROJECT---TECHNOHACKS-SOLUTIONS---MACHINE-LEARNING-ENGINEERING" target="_blank">View on GitHub</a> <!-- رابط لمشروع GitHub -->
-            </div>
-        </div>
-        <!-- Add more projects here -->
-    </section>
+    <!-- روابط الاتصال مثل لينكدإن، البريد الإلكتروني، الهاتف -->
+    <div class="contact-links">
+        <p><strong>Contact Me:</strong></p>
+        <p>
+            <!-- الروابط يمكن تعديلها كما ترغب -->
+            <a href="https://www.linkedin.com/in/hamzakhader/" target="_blank">LinkedIn</a> |
+            <a href="mailto:eng.hamzakhader@gmail.com">Email</a> |
+            <a href="tel:+962770056529">Phone/WhatsApp: +962770056529</a> |
+            <a href="https://www.linkedin.com/in/hamzakhader/overlay/1740308396350/single-media-viewer/?type=DOCUMENT&profileId=ACoAAE7Uk34BZJLleYeZeAoallAyt1_J7R2Uo2o" target="_blank">CV</a> |
+            <a href="https://www.linkedin.com/in/hamzakhader/overlay/1740308285651/single-media-viewer/?type=DOCUMENT&profileId=ACoAAE7Uk34BZJLleYeZeAoallAyt1_J7R2Uo2o" target="_blank">Cover Letter</a>
+        </p>
+    </div>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2025 Hamza Khader | All Rights Reserved</p> <!-- حقوق الملكية -->
-    </footer>
-
-</body>
-</html>
+    <!-- هنا يتم إضافة رمز QR الذي يؤدي إلى محفظتك على الإنترنت -->
+    <div>
+        <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?data
