@@ -1,110 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamza Khader - Portfolio</title>
+    <!-- Metadata: معلومات حول الصفحة -->
+    <meta charset="UTF-8"> <!-- تحديد الترميز (UTF-8) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- لضبط العرض على الأجهزة المختلفة -->
+    <title>Hamza Khader - Portfolio</title> <!-- عنوان الصفحة يظهر في التبويب -->
+    
     <style>
+        /* CSS: تخصيص أسلوب تنسيق الصفحة */
+        
         /* General Body Styles */
         body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #212121;
-            color: white;
+            font-family: 'Arial', sans-serif; /* تحديد نوع الخط المستخدم في النص */
+            margin: 0; /* إزالة الهوامش حول الصفحة */
+            padding: 0; /* إزالة الحشوات حول الصفحة */
+            background-color: #212121;  /* تحديد لون خلفية الصفحة */
+            color: white; /* تحديد لون النص */
         }
 
         /* Header Styles */
         header {
-            background-color: #00ffb3;
-            color: black;
-            padding: 30px 0;
-            text-align: center;
+            background-color: #00ffb3; /* تحديد لون خلفية الهيدر */
+            color: black; /* تحديد لون النص داخل الهيدر */
+            padding: 30px 0; /* تحديد المسافة حول النص داخل الهيدر */
+            text-align: center; /* محاذاة النص إلى المنتصف */
         }
 
         header h1 {
-            font-size: 2.5em;
-            margin: 0;
+            font-size: 2.5em; /* تحديد حجم الخط لعنوان الهيدر */
+            margin: 0; /* إزالة الهوامش حول العنوان */
         }
 
         header p {
-            font-size: 1.1em;
-            margin-top: 10px;
+            font-size: 1.1em; /* تحديد حجم الخط للفقرات في الهيدر */
+            margin-top: 10px; /* إضافة مسافة بين العنوان والفقرات */
         }
 
         /* Project Section Styles */
         .projects {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 50px 20px;
-            gap: 30px;
+            display: flex; /* استخدام الفليكس لجعل العناصر تتوزع بشكل مرن */
+            flex-wrap: wrap; /* السماح للعناصر بأن تنتقل إلى السطر التالي إذا كانت أكبر من المساحة المتاحة */
+            justify-content: center; /* محاذاة العناصر إلى المنتصف */
+            padding: 50px 20px; /* تحديد المسافة حول المشروع */
+            gap: 30px; /* تحديد المسافة بين العناصر */
         }
 
         .project-card {
-            background-color: #333;
-            width: 300px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease-in-out;
-            border: 4px solid #00ffb3; /* Adding green border here */
+            background-color: #333; /* تحديد لون خلفية الكارد */
+            width: 300px; /* تحديد عرض الكارد */
+            border-radius: 8px; /* إضافة زوايا مدورة للكارد */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* إضافة ظل للكارد */
+            overflow: hidden; /* إخفاء المحتوى الذي يتجاوز حدود الكارد */
+            transition: transform 0.3s ease-in-out; /* إضافة تأثير عند تحريك الماوس على الكارد */
+            border: 4px solid #00ffb3; /* إضافة إطار حول الكارد باللون الأخضر */
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-10px); /* إضافة تأثير عند تحريك الماوس لجعل الكارد يرتفع قليلاً */
         }
 
         .project-card .content {
-            padding: 20px;
-            text-align: left;
+            padding: 20px; /* تحديد المسافة حول محتوى الكارد */
+            text-align: left; /* محاذاة النص لليسار */
         }
 
         .project-card .content h3 {
-            font-size: 1.6em;
-            color: white;
+            font-size: 1.6em; /* تحديد حجم الخط لعناوين المشاريع */
+            color: white; /* تحديد لون النص لعناوين المشاريع */
         }
 
         .project-card .content p {
-            color: #bbb;
-            font-size: 1em;
+            color: #bbb; /* تحديد لون النص للوصف */
+            font-size: 1em; /* تحديد حجم الخط للوصف */
         }
 
         .project-card .content a {
-            display: inline-block;
-            margin-top: 10px;
-            background-color: #00ffb3;
-            color: black;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            display: inline-block; /* جعل الرابط يظهر ككتلة مدمجة */
+            margin-top: 10px; /* إضافة مسافة بين الرابط والمحتوى */
+            background-color: #00ffb3; /* تحديد لون خلفية الرابط */
+            color: black; /* تحديد لون النص داخل الرابط */
+            text-decoration: none; /* إزالة التسطير من الرابط */
+            padding: 10px 20px; /* إضافة حشوة داخل الرابط */
+            border-radius: 5px; /* إضافة زوايا مدورة للرابط */
+            transition: background-color 0.3s ease; /* إضافة تأثير عند تحريك الماوس على الرابط */
         }
 
         .project-card .content a:hover {
-            background-color: #e6004c;
+            background-color: #e6004c; /* تغيير لون خلفية الرابط عند التمرير عليه */
         }
 
         /* Footer Styles */
         footer {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            background-color: #333; /* تحديد لون خلفية الفوتر */
+            color: white; /* تحديد لون النص في الفوتر */
+            padding: 20px; /* إضافة حشوة داخل الفوتر */
+            text-align: center; /* محاذاة النص في الفوتر إلى المنتصف */
+            position: fixed; /* تثبيت الفوتر في أسفل الصفحة */
+            width: 100%; /* جعل الفوتر يمتد عبر عرض الصفحة بالكامل */
+            bottom: 0; /* تثبيت الفوتر عند الأسفل */
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            /* تخصيص التنسيق للأجهزة ذات الشاشات الصغيرة */
             .projects {
-                flex-direction: column;
-                align-items: center;
+                flex-direction: column; /* ترتيب العناصر بشكل عمودي */
+                align-items: center; /* محاذاة العناصر إلى المنتصف */
             }
 
             .project-card {
-                width: 80%;
+                width: 80%; /* جعل عرض الكارد أكبر للأجهزة الصغيرة */
             }
         }
     </style>
@@ -113,8 +118,8 @@
 
     <!-- Header Section -->
     <header>
-        <h1>Hamza Khader</h1>
-        <p>Data Scientist | Data Analyst | AI Engineer | Machine Learning Enthusiast | Problem Solver</p>
+        <h1>Hamza Khader</h1> <!-- عنوان الصفحة -->
+        <p>Data Scientist | Data Analyst | AI Engineer | Machine Learning Enthusiast | Problem Solver</p> <!-- وصف قصير عن الشخص -->
     </header>
 
     <!-- Projects Section -->
@@ -122,9 +127,9 @@
         <!-- Example Project -->
         <div class="project-card">
             <div class="content">
-                <h3>Diabetes Prediction Project</h3>
-                <p>This project uses machine learning techniques to predict diabetes based on health data.</p>
-                <a href="https://github.com/EngHamzaKhader/DIABETES-PREDICTION-PROJECT---TECHNOHACKS-SOLUTIONS---MACHINE-LEARNING-ENGINEERING" target="_blank">View on GitHub</a>
+                <h3>Diabetes Prediction Project</h3> <!-- عنوان المشروع -->
+                <p>This project uses machine learning techniques to predict diabetes based on health data.</p> <!-- وصف المشروع -->
+                <a href="https://github.com/EngHamzaKhader/DIABETES-PREDICTION-PROJECT---TECHNOHACKS-SOLUTIONS---MACHINE-LEARNING-ENGINEERING" target="_blank">View on GitHub</a> <!-- رابط للمشروع على GitHub -->
             </div>
         </div>
         <!-- Add more projects here -->
@@ -132,7 +137,7 @@
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 Hamza Khader | All Rights Reserved</p>
+        <p>&copy; 2025 Hamza Khader | All Rights Reserved</p> <!-- نص الفوتر مع تاريخ حقوق الملكية -->
     </footer>
 
 </body>
